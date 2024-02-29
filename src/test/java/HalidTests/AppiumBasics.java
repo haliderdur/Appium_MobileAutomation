@@ -25,7 +25,7 @@ public class AppiumBasics {
         // start server
         AppiumDriverLocalService service = new AppiumServiceBuilder()
                 .withAppiumJS(new File(mainJS_FilePath))
-                .withIPAddress(ipAddress)
+                .withIPAddress(ipAddress) //
                 .usingPort(port)
                 .withArgument(GeneralServerFlag.BASEPATH, "/wd/hub/")
                 .build();
