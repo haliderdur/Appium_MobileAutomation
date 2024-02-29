@@ -11,6 +11,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.Duration;
 
 public class BaseTest {
     public AndroidDriver driver;
@@ -39,6 +40,8 @@ public class BaseTest {
         options.setDeviceName("HalidAndroidDevice"); // emulator name must match with virtual device name
         options.setApp("C:\\Users\\halid\\IdeaProjects\\Appium_MobileAutomation\\src\\test\\java\\resources\\ApiDemos-debug.apk"); // install the app from pc into the mobile device
         driver = new AndroidDriver(new URI("http://" + ipAddress + ":" + port + "/wd/hub").toURL(), options);
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     }
 
