@@ -18,6 +18,6 @@ public class Scroll extends BaseTest {
         // driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"WebView\"));"));
 
         // where to scroll is not known - scrolls till the bottom
-        scrollToTheEndAction();
+        scrollToTheEndAction("down", 3.0);
     }
 }

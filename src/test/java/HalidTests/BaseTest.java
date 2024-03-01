@@ -57,13 +57,13 @@ public class BaseTest {
     }
 
     // clicks and holds on given element for given duration
-    public void longClickAction(WebElement element, int duration){
+    public void longClickAction(WebElement element, int duration) {
         ((JavascriptExecutor) driver).executeScript("mobile:longClickGesture",
                 ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(), "duration", duration));
     }
 
     // scrolls down in the page till the end
-    public void scrollToTheEndAction(){
+    public void scrollToTheEndAction(String direction_up_down, double percent) {
         boolean canScrollMore;
         do {
             canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture",
@@ -71,10 +71,18 @@ public class BaseTest {
                             .put("top", 100)
                             .put("width", 200)
                             .put("height", 200)
-                            .put("direction", "down")
-                            .put("percent", 3.0)
+                            .put("direction", direction_up_down) // mandatory value (up or down)
+                            .put("percent", percent) // mandatory value (3.0)
                             .build());
         } while (canScrollMore);
+    }
+
+    public void swipeAction(WebElement element, String direction, double percent) {
+        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.builder()
+                .put("elementId", ((RemoteWebElement) element).getId())
+                .put("direction", direction) // mandatory value (right or left)
+                .put("percent", percent) // mandatory value (0.75)
+                .build());
     }
 
 
