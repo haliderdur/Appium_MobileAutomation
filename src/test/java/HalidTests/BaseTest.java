@@ -56,11 +56,29 @@ public class BaseTest {
 
     }
 
+    // clicks and holds on given element for given duration
     public void longClickAction(WebElement element, int duration){
         ((JavascriptExecutor) driver).executeScript("mobile:longClickGesture",
                 ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(), "duration", duration));
     }
 
+    // scrolls down in the page till the end
+    public void scrollToTheEndAction(){
+        boolean canScrollMore;
+        do {
+            canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture",
+                    ImmutableMap.builder().put("left", 100)
+                            .put("top", 100)
+                            .put("width", 200)
+                            .put("height", 200)
+                            .put("direction", "down")
+                            .put("percent", 3.0)
+                            .build());
+        } while (canScrollMore);
+    }
+
+
+    // close the driver and the appium server
     @AfterClass
     public void tearDown() {
         // quit driver
