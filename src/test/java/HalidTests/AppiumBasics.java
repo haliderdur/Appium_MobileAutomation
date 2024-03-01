@@ -14,27 +14,27 @@ import java.net.URISyntaxException;
 public class AppiumBasics extends BaseTest {
 
     @Test
-    public void wifiSettingName() throws URISyntaxException, MalformedURLException {
+    public void wifiSettingName() {
 
         // driver.findElement(AppiumBy.  ) --> comes from Appium library
         // driver.findElement(By.        ) --> comes from Selenium library
         WebElement preferenceBtn = driver.findElement(AppiumBy.accessibilityId("Preference"));
         preferenceBtn.click();
 
-        WebElement preferenceDependenciesBtn = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"3. Preference dependencies\"]"));
+        WebElement preferenceDependenciesBtn = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc='3. Preference dependencies']"));
         preferenceDependenciesBtn.click();
 
         WebElement wifiCheckBox = driver.findElement(AppiumBy.id("android:id/checkbox"));
         wifiCheckBox.click();
 
-        WebElement wifiSettingsBtn = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"android:id/title\" and @text=\"WiFi settings\"]"));
+        WebElement wifiSettingsBtn = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@resource-id='android:id/title' and @text='WiFi settings']"));
         wifiSettingsBtn.click();
 
 
         WebElement wifiSettingsEditInputBox = driver.findElement(AppiumBy.id("android:id/edit"));
         String wifiSettingsEditTitle = driver.findElement(AppiumBy.id("android:id/alertTitle")).getText();
         Assert.assertEquals(wifiSettingsEditTitle, "WiFi settings");
-      //  wifiSettingsEditInputBox.click();
+        //  wifiSettingsEditInputBox.click();
         wifiSettingsEditInputBox.sendKeys("halid wifi");
 
 
