@@ -91,6 +91,11 @@ public class BaseTest {
                 .build());
     }
 
+    public Double getFormattedAmount(String amount, int index) {
+        Double price = Double.parseDouble(amount.substring(index));
+        return price;
+    }
+
 
     // close the driver and the appium server
     @AfterClass
