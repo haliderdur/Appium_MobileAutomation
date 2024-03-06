@@ -42,7 +42,8 @@ public class BaseTest {
         // Appium code --> Appium Server --> Mobile
         options = new UiAutomator2Options();
         options.setDeviceName("HalidAndroidDevice"); // emulator name must match with virtual device name
-        options.setApp("C:\\Users\\halid\\IdeaProjects\\Appium_MobileAutomation\\src\\test\\java\\resources\\ApiDemos-debug.apk"); // install the app from pc into the mobile device
+        //   options.setApp("C:\\Users\\halid\\IdeaProjects\\Appium_MobileAutomation\\src\\test\\java\\resources\\ApiDemos-debug.apk"); // install the app from pc into the mobile device
+        options.setApp("C:\\Users\\halid\\IdeaProjects\\Appium_MobileAutomation\\src\\test\\java\\resources\\General-Store.apk"); // install the app from pc into the mobile device
 
         try {
             driver = new AndroidDriver(new URI("http://" + ipAddress + ":" + port + "/wd/hub").toURL(), options);
@@ -75,6 +76,11 @@ public class BaseTest {
                             .put("percent", percent) // mandatory value (3.0)
                             .build());
         } while (canScrollMore);
+    }
+
+    public String scrollToText(String text) {
+        String scrollText = "new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + text + "\"));";
+        return scrollText;
     }
 
     public void swipeAction(WebElement element, String direction, double percent) {
