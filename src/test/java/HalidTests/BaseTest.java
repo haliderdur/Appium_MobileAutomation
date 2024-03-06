@@ -57,7 +57,7 @@ public class BaseTest {
 
     }
 
-    // clicks and holds on given element for given duration
+    // clicks and holds on given element for given duration in milliseconds
     public void longClickAction(WebElement element, int duration) {
         ((JavascriptExecutor) driver).executeScript("mobile:longClickGesture",
                 ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(), "duration", duration));
