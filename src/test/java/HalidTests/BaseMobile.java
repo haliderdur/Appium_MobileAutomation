@@ -17,7 +17,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.Duration;
 
-public class BaseTest {
+public class BaseMobile {
     public AndroidDriver driver;
     public AppiumDriverLocalService service;
     public UiAutomator2Options options;
@@ -42,7 +42,8 @@ public class BaseTest {
         // Appium code --> Appium Server --> Mobile
         options = new UiAutomator2Options();
         options.setDeviceName("HalidAndroidDevice"); // emulator name must match with virtual device name
-        //   options.setApp("C:\\Users\\halid\\IdeaProjects\\Appium_MobileAutomation\\src\\test\\java\\resources\\ApiDemos-debug.apk"); // install the app from pc into the mobile device
+        options.setChromedriverExecutable("C:\\Users\\halid\\testAutomationDrivers\\chromedriver-win64\\chromedriver-win64");
+        // options.setApp("C:\\Users\\halid\\IdeaProjects\\Appium_MobileAutomation\\src\\test\\java\\resources\\ApiDemos-debug.apk"); // install the app from pc into the mobile device
         options.setApp("C:\\Users\\halid\\IdeaProjects\\Appium_MobileAutomation\\src\\test\\java\\resources\\General-Store.apk"); // install the app from pc into the mobile device
 
         try {

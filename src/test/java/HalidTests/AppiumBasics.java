@@ -2,16 +2,11 @@ package HalidTests;
 
 
 import io.appium.java_client.AppiumBy;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-
-public class AppiumBasics extends BaseTest {
+public class AppiumBasics extends BaseMobile {
 
     @Test
     public void wifiSettingName() {

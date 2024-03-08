@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class eCommerce_TC002 extends BaseTest {
+public class eCommerce_TC002 extends BaseMobile {
 
     @Test
     public void fillForm() {

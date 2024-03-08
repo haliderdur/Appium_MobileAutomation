@@ -9,11 +9,10 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.DeviceRotation;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class MisceallanousActions extends BaseTest {
+public class MisceallanousActions extends BaseMobile {
 
     @Test
     public void Misceallanous() {

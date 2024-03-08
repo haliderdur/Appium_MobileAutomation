@@ -1,12 +1,10 @@
 package HalidTests;
 
-import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class Scroll extends BaseTest {
+public class Scroll extends BaseMobile {
 
     @Test
     public void scroll() {

@@ -9,7 +9,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class DragAndDrop extends BaseTest {
+public class DragAndDrop extends BaseMobile {
 
     @Test
     public void dragAndDrop() throws InterruptedException {
